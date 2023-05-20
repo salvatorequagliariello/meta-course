@@ -1,0 +1,64 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    margin: 20vh auto;
+    padding: 2em;
+    max-width: fit-content;
+    color: rgb(226, 226, 226);
+    background-color: rgb(35, 42, 56);
+
+    border-radius: 1vh;
+}
+
+div ~ ul {
+    font-size: 0.9rem;
+    margin: 1vh 0;
+    background-color: rgb(226, 226, 226);
+    color: rgb(35, 42, 56);
+    box-shadow: 2px 2px 3px rgb(13, 16, 21);
+    padding: 0.5em;
+    border-radius: 0.5em;
+    list-style-type: square;
+}
+
+.button-next {
+    color: rgb(35, 42, 56);
+    background-color: rgb(205, 207, 211);
+    border: none;
+    box-shadow: 1px 1px 2px rgb(77, 77, 77);
+    border-radius: 1vh;
+}
+
+.button-next:hover {
+    cursor: pointer;
+    background-color: rgb(179, 180, 181);
+}
+
+.button-next:active {
+    background-color: rgb(59, 59, 59);
+    box-shadow: 1px 1px 2px rgb(59, 59, 59);
+    color: rgb(226, 226, 226);;
+}
+
+li::marker {
+    color: rgb(55, 64, 80);
+    content: '▇ ';
+    text-shadow: 1px 0 1px;
+}
+
+.link-website {
+    color: rgb(226, 226, 226);
+}
+
+.link-website:hover {
+    color: rgb(158, 158, 158);
+}
+
+a:visited {
+    color: blueviolet;
+}
