@@ -43,7 +43,7 @@
 }
 
 .logo {
-    height: 100%;
+    height: 120%;
     object-fit: contain;
 }
 
@@ -78,12 +78,15 @@
 
 .main-container {
     margin-top: 8vh;
-    display: grid;
-    position: relative;
-    overflow:hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
 } 
 
 .banner {
+    padding-top: 5vh;
+    padding-bottom: 30vh;
+
     background-image: url(images/adam-winger-KVVjmb3IIL8-unsplash.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -94,7 +97,6 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: 20vh;
 }
 
 .slogan {
@@ -103,20 +105,17 @@
 }
 
 .cards-section {
-    margin: 4vh 0;
     display: flex;
     flex-wrap: wrap;
 
     justify-content: center;
     align-items: center;
-
     gap: 2vw;
 }
 
 .card {
     width: 30%;
     height: 50vh;
-    overflow: hidden;
 }
 
 .card-pic {
@@ -126,58 +125,159 @@
 }
 
 .info-section {
+    border: 9px solid var(--primary-color);
     display: flex;
     flex-direction: column;
-    margin: 0 2.9vw;
-    margin-bottom: 20vh;
+    margin: 0 3vw;
 }
 
 .article-section {
     height: 50vh;
+    flex-wrap: nowrap;
     display: flex;
-    gap: 2vw;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 3vh;
+
+    text-align: justify;
 }
 
 .article-text {
-    text-align:justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
     width: 50%;
+    height: 100%;
 }
 
 .article-img-container {
+    height: 100%;
     width: 50%;
 }
 
 .article-img {
     object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 
 .info-paragraph {
-    color: var(--hover-color)
+    color: var(--hover-color);
 }
 
-.info-title-first {
-    text-align: right;
+.info-title {
     color: var(--primary-color);
 }
 
-.info-title-second {
-    text-align: left;
-    color: var(--primary-color);
-}
 
 /* MAIN */
 /* MAIN */
+
+/* BOOKING SECTION */
+/* BOOKING SECTION */
+
+.booking-section {
+    display: flex;
+    flex-direction: column;
+    border: 9px solid var(--primary-color);
+    height: min-content;
+    margin: 0 3vw;
+}
+
+.booking-title {
+    padding: 1rem 0;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.booking-content-container {
+    padding: 0 1rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+}
+
+.booking-img-container {
+    width: 20%;
+}
+
+.booking-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.form-section {
+    gap: 0.7rem;
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+.form-label {
+    letter-spacing: 0.1rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--main-bg-color);
+}
+
+.input-box {
+    padding: 0.3rem 7rem 0.3rem 0.3rem;
+    font-size: 0.7rem;
+    color: var(--secondary-color);
+    display: block;
+    border: 2px solid var(--main-bg-color);
+    background-color: #5D6363;
+}
+
+.input-box::placeholder {
+    color: #988b81;
+}
+
+.booking-button {
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    background: none;
+    background-color: #5D6363;
+    color: var(--secondary-color);
+    border: 3px solid var(--main-bg-color);
+}
+
+.booking-button:hover {
+    border: 3px solid #767c7c;;
+    cursor: pointer;
+    background-color: #767c7c;
+}
+
+.booking-button:active {
+    border: 3px solid #202121;;
+    cursor: pointer;
+    background-color: #202121;;
+}
+
+::-webkit-datetime-edit-text {color: #988b81; padding: 0 0.3em; }
+::-webkit-datetime-edit-month-field { color: #988b81; }
+::-webkit-datetime-edit-day-field { color: #988b81; }
+::-webkit-datetime-edit-year-field { color: #988b81; }
+::-webkit-datetime-edit { 
+    padding: 0 1.1rem 0 0.1rem;
+    
+}
+
+/* BOOKING SECTION */
+/* BOOKING SECTION */
 
 /* FOOTER */
 /* FOOTER */
 
 .footer-section {
-    position: absolute;
-    bottom: 0;
     width: 100%;
     background-color: var(--main-bg-color);
     height: 100px;
