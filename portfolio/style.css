@@ -202,12 +202,12 @@
 }
 
 .booking-img-container {
-    width: 20%;
+    height: 300px;
 }
 
 .booking-img {
-    height: 100%;
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -277,11 +277,103 @@
 /* FOOTER */
 /* FOOTER */
 
-.footer-section {
+.footer-container {
+    padding: 1rem;
+    border-top: 3px solid var(--primary-color);
+    display: flex;
+    justify-content: space-around;
     width: 100%;
     background-color: var(--main-bg-color);
-    height: 100px;
+    color: var(--secondary-color);
 }
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-newsletter {
+    justify-content: flex-start;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter-label {
+    font-size: 1rem;
+}
+
+.input-button-subscribe {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+#newsletter-email {
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
+    margin: 0;
+    border: none;
+}
+
+#newsletter-email:focus {
+    box-shadow: 0 0 3px var(--secondary-color);
+    outline-offset: 0px;
+    outline: none;
+}
+
+.newsletter-button {
+    background-color: var(--secondary-color);
+    color: var(--main-bg-color);
+    padding: 0.5rem;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+}
+
+.newsletter-button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 2px var(--hover-color);
+    background-color: var(--hover-color);
+}
+
+.newsletter-button:active {
+    cursor: pointer;
+    box-shadow: 0 0 2px #988b81;
+    background-color: #988b81;
+    color: var(--secondary-color);
+}
+
+.footer-link {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--hover-color);
+    text-decoration: none;
+}
+
+.footer-follow-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.follow-icons {
+    display: flex;
+    align-items: flex-start;
+    gap: 1vw;
+}
+
+.follow-icon {
+    object-fit: contain ;
+    height: 32px;
+    width: 32px;
+    filter: invert(91%) sepia(13%) saturate(306%) hue-rotate(338deg) brightness(99%) contrast(92%);
+}
+
+.follow-icon:hover {
+    cursor: pointer;
+    filter: invert(70%) sepia(8%) saturate(588%) hue-rotate(342deg) brightness(92%) contrast(86%);
+} 
 
 /* FOOTER */
 /* FOOTER */
