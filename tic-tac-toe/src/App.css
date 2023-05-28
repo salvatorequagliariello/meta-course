@@ -1,0 +1,15 @@
+.App {
+  margin: 25vh auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.board-square {
+  font-size: 2rem;
+  border: 1px solid black;
+  border-radius: none;
+  padding: 20px 30px;
+  background-color: white;
+}
