@@ -23,9 +23,6 @@ function App() {
         <Intro3 />
       </div>
       <div className="cards-container">
-        <Card h2="First card's H2" h3="First card's H3"/>
-        <Card h2="Second card's H2" h3="Second card's H3"/>
-        <Card h2="Third card's H2" h3="Third card's H3"/>
       </div>
       <RandomNumber />
       <Footer />
