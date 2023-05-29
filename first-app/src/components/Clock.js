@@ -22,7 +22,7 @@ function Clock() {
 
 
     return (
-        <div>
+        <div className="clock-container">
             The current time is:
             <Message message={date.toLocaleTimeString()}/>
         </div>
