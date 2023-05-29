@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Message(props) {
     return (
@@ -7,17 +7,24 @@ function Message(props) {
 };
 
 function Clock() {
-    const data = new Date();
-    const [defaultTime, setTime] = useState(data.toLocaleTimeString());
+    const [date, setDate] = useState(new Date());
 
-    function changeTime() {
-        setTime(data.toLocaleTimeString());
-    }
+    function refreshClock() {
+        setDate(new Date());
+    };
+
+    useEffect(() => {
+        const timerId = setInterval(refreshClock, 1000);
+        return function cleanup() {
+            clearInterval(timerId);
+        };
+    }, []);
+
 
     return (
         <div>
             The current time is:
-            <Message message={changeTime} onChange={changeTime}/>
+            <Message message={date.toLocaleTimeString()}/>
         </div>
     );
 };
