@@ -8,6 +8,7 @@ import Footer from './components/Footer';
 import RandomNumber from './components/RandomNumberGenerator';
 import Card from './components/Card';
 import ModeToggler from './components/ModeToggler';
+import Clock from './components/Clock';
 
 function Header() {
   return <h1 className="header-title-h1">Questa è la mia prima App!</h1>
@@ -24,8 +25,7 @@ function App() {
         <Intro2 />
         <Intro3 />
       </div>
-      <div className="cards-container">
-      </div>
+      <Clock />
       <RandomNumber />
       <Footer />
       
