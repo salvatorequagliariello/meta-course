@@ -9,10 +9,11 @@ function NavBar() {
             </div>
 
             <div className="links-container">
-                <Link to="" className='link'></Link>
-                <Link to="" className='link'></Link>
-                <Link to="" className='link'></Link>
+                <Link to="/" className='link'>Homepage</Link>
+                <Link to="/About" className='link'>About</Link>
             </div>
         </div>
     )
 }
+
+export default NavBar;
