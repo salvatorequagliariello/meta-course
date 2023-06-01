@@ -8,11 +8,12 @@ function NavBar() {
                 <h1 className="title">HEADER</h1>
             </div>
 
-            <div className="list-container">
-                <ul className="list">
-                    <li className="list-item">HOME</li>
-                </ul>
+            <div className="links-container">
+                <Link to="/" className='link'>Homepage</Link>
+                <Link to="/About" className='link'>About</Link>
             </div>
         </div>
     )
 }
+
+export default NavBar;
