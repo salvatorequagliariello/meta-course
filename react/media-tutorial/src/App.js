@@ -1,23 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import ReactPlayer from 'react-player';
+
 
 function App() {
+  const urlYou = "https://www.youtube.com/watch?v=vq6-3Er59p4";
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>React player tutorial</h1>
+      <ReactPlayer url={urlYou} 
+                   loop={true}
+                   playing={true}
+                   controls={true}
+                   light={true}/>
+                   
     </div>
   );
 }
