@@ -1,4 +1,4 @@
-import {useState, useContext} from 'react';
+import {useState, useContext, useEffect} from 'react';
 import { ListContext } from './ToDoListContext';
 
 function ToDoForm() {
@@ -15,6 +15,10 @@ function ToDoForm() {
         e.preventDefault();
         setList(list.slice(0, -1));
     }
+
+    useEffect(() => {
+        document.title = list.length >= 1 ? `To-Do List ${list.length} ` : "To-Do List"
+    }, [list]);
     
     return (
         <div>
