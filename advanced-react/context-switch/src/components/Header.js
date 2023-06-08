@@ -1,7 +1,0 @@
-
-
-function Header({children}) {
-    return (
-
-    )
-}
