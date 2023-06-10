@@ -1,9 +1,15 @@
+import { ChakraProvider } from '@chakra-ui/react';
+
+import Header from './components/Header';
+
 
 function App() {
   return (
-    <div className="app-container">
-
-    </div>
+    <ChakraProvider resetCSS="true">
+      <div className="app-container">
+        <Header />
+      </div>
+    </ChakraProvider>
   );
 }
 
