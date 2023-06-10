@@ -4,6 +4,7 @@ import Header from './components/Header';
 import LandingSection from './components/LandingSection';
 
 
+
 function App() {
   return (
     <ChakraProvider resetCSS="true">
