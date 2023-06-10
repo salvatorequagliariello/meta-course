@@ -37,10 +37,11 @@ const Header = () => {
         const id = `${anchor}-section`;
         const element = document.getElementById(id);
 
-        element.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        })
+        if (element) {
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            })}
     };
 
     return (
@@ -54,6 +55,7 @@ const Header = () => {
             transitionDuration=".3s"
             transitionTimingFunction="ease-in-out"
             backgroundColor="black"
+            zIndex="100"
         >
             <Box color="white" maxWidth="1280px" margin="0 auto" justifyContent="center">
                 <HStack
@@ -72,8 +74,8 @@ const Header = () => {
                         <HStack spacing={8} letterSpacing="0.5em">
                             <a on href="#">HOME</a>
                             <a>ABOUT</a>
-                            <a href="/#projects-section">CONTACT ME</a>
-                            <a href="/#contactme-section">PROJECTS</a>
+                            <a href="/#contactme-section">CONTACT ME</a>
+                            <a href="/#projects-section">PROJECTS</a>
                         </HStack>
                     </nav>
 
