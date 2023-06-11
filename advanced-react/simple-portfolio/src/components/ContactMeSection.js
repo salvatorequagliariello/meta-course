@@ -28,9 +28,15 @@ const ContactMeSection = () => {
       type: "",
       comment: ""
     },
-    onSubmit: (values) => {},
+    onSubmit: (values) => {
+      submit(values);
+    },
     validationSchema: Yup.object({
-    }),
+      firstName: Yup.string().label("firstname").required(),
+      email: Yup.string().email().required(),
+      type: Yup.string().required(),
+      comment: Yup.string().required(),
+    })
   });
 
   return (
@@ -45,9 +51,11 @@ const ContactMeSection = () => {
           Contact me
         </Heading>
         <Box p={6} rounded="md" w="100%">
-          <form>
+          <form onSubmit={(e) => {
+            e.preventDefault();
+            formik.handleSubmit()}}>
             <VStack spacing={4}>
-              <FormControl isInvalid={false}>
+              <FormControl isInvalid={false} onBlur={formik.validationSchema}>
                 <FormLabel htmlFor="firstName">Name</FormLabel>
                 <Input
                   id="firstName"
