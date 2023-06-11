@@ -5,6 +5,7 @@ import LandingSection from './components/LandingSection';
 import ProjectSection from './components/ProjectSection';
 import ContactMeSection from './components/ContactMeSection';
 import AlertProvider from './context/alertContext'
+import Footer from './components/Footer';
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           <LandingSection />
           <ProjectSection />
           <ContactMeSection />
+          <Footer />
       </AlertProvider>
         </div>
     </ChakraProvider>
