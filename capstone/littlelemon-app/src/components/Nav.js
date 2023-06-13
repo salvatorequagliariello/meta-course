@@ -2,12 +2,12 @@
 function Nav() {
     return (
         <nav className="header-nav-section">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#"></a>Menu</li>
-            <li><a href="#"></a>Reservations</li>
-            <li><a href="#"></a>Order Online</li>
-            <li><a href="#"></a>Login</li>
+            <li><a className="nav-link" href="#">Home</a></li>
+            <li><a className="nav-link" href="#">About</a></li>
+            <li><a className="nav-link" href="#">Menu</a></li>
+            <li><a className="nav-link" href="#">Reservations</a></li>
+            <li><a className="nav-link" href="#">Order Online</a></li>
+            <li><a className="nav-link" href="#">Login</a></li>
         </nav>
     );
 };
