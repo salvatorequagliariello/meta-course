@@ -1,0 +1,209 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+* {
+  font-family: 'Karla', sans-serif;
+  font-family: 'Markazi Text', serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.header-section {
+  padding: 30px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  background-color: white;
+}
+
+.header-nav-section {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: black;
+  font-family: 'Karla', sans-serif;
+  font-weight: bold;
+}
+
+/* Hero Section */ /* Hero Section */ /* Hero Section */ /* Hero Section */ /* Hero Section */ /* Hero Section */ /* Hero Section */ /* Hero Section */ /* Hero Section */ /* Hero Section */
+/* Hero Section */ /* Hero Section */ /* Hero Section */ /* Hero Section */ /* Hero Section */ /* Hero Section */ /* Hero Section */ /* Hero Section */ /* Hero Section */ /* Hero Section */
+
+.hero-section {
+  background-color: #495E57;
+  display: flex;
+  justify-content: center;
+  height: 285px;
+  overflow: visible;
+  padding: 30px 0 30px;
+}
+
+.hero-content {
+  display: flex;
+  gap: 80px;
+}
+
+.hero-image {
+  border-radius: 15px;
+  object-fit:cover;
+  height: 320px;
+  width: 300px;
+}
+
+.hero-text {
+  width: 310px;
+}
+
+.hero-text-h1 {
+  font-family: 'Markazi Text', serif;
+  margin: 0;
+  font-size: 3rem;
+  font-weight: 300;
+  color: #B99F16;
+  line-height: 1rem;
+}
+
+.hero-text-h2 {
+  font-size: 2rem;
+  font-weight: 200;
+  margin: 0;
+  color: white;
+  font-family: 'Markazi Text', serif;
+}
+
+.hero-text-p {
+  font-family: 'Karla', sans-serif;
+  color: white;
+  line-height: 1.3rem;
+  font-size: 1.2rem;
+}
+
+.hero-text-button {
+  font-family: 'Karla', sans-serif;
+  font-weight: bold;
+  margin-top: 15px;
+  border: 0;
+  background-color: #F4CE13;
+  padding: 10px 30px;
+  border-radius: 15px;
+}
+
+/* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */
+/* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */
+
+.card-container {
+  width: 230px;
+}
+
+.card-image {
+  height: 185px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card-text {
+  background-color: #EDEFEE;
+  padding: 20px;
+  height: 240px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.card-main-info {
+  text-align: flex-start;
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 200;
+  text-align: flex-start;
+  align-items: flex-start;
+}
+
+.card-price {
+  text-align: flex-start;
+  align-items: flex-start;
+  font-family: 'Karla', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 200;
+  color: #f6772e;
+}
+
+.card-description {
+  color: #606060;
+  font-family: 'Karla', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  margin: 25px 0;
+}
+
+.delivery-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.delivery-text {
+
+}
+
+.delivery-img {
+width: 20px;
+}
