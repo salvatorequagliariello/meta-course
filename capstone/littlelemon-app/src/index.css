@@ -91,7 +91,7 @@ code {
 
 .hero-content {
   display: flex;
-  gap: 40px;
+  gap: 80px;
 }
 
 .hero-image {
@@ -137,4 +137,73 @@ code {
   background-color: #F4CE13;
   padding: 10px 30px;
   border-radius: 15px;
+}
+
+/* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */
+/* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */ /* Card */
+
+.card-container {
+  width: 230px;
+}
+
+.card-image {
+  height: 185px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card-text {
+  background-color: #EDEFEE;
+  padding: 20px;
+  height: 240px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.card-main-info {
+  text-align: flex-start;
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 200;
+  text-align: flex-start;
+  align-items: flex-start;
+}
+
+.card-price {
+  text-align: flex-start;
+  align-items: flex-start;
+  font-family: 'Karla', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 200;
+  color: #f6772e;
+}
+
+.card-description {
+  color: #606060;
+  font-family: 'Karla', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1rem;
+  margin: 25px 0;
+}
+
+.delivery-section {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.delivery-text {
+
+}
+
+.delivery-img {
+width: 20px;
 }
