@@ -1,0 +1,21 @@
+.header-section {
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    background-color: white;
+}
+
+.header-nav-section {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    font-family: 'Karla', sans-serif;
+    font-weight: bold;
+  }
