@@ -6,7 +6,7 @@ function Nav() {
             <li><Link className="nav-link" to="/">Home</Link></li>
             <li><Link className="nav-link" to="#">About</Link></li>
             <li><Link className="nav-link" to="#">Menu</Link></li>
-            <li><Link className="nav-link" to="#">Reservations</Link></li>
+            <li><Link className="nav-link" to="/booking">Reservations</Link></li>
             <li><Link className="nav-link" to="#">Order Online</Link></li>
             <li><Link className="nav-link" to="#">Login</Link></li>
         </nav>

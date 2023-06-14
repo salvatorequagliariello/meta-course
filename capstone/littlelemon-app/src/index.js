@@ -10,8 +10,10 @@ import './style/header.css';
 import './style/herosection.css';
 import './style/main.css';
 import './style/testimonials.css';
-import './style/infosection.css'
-import './style/footer.css'
+import './style/infosection.css';
+import './style/footer.css';
+import './style/bookingpage.css'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
