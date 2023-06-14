@@ -1,9 +1,10 @@
+
 import { useReducer, useState } from "react";
 
-const availableTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
 const numberOfGuests = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function BookingForm() {
+
     const [formData, setFormData] = useState({});
     const [firstName, seFirsttName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -14,11 +15,11 @@ function BookingForm() {
     const [occasion, setOccasion] = useState("");
 
     const handleSubmit = e => {
-
+        e.preventDefault()
     };
 
     return(
-        <form>
+        <form onSubmit={handleSubmit}>
 
             <fieldset className="field-set">
                 <label className="text-input-label" htmlFor="firstName">First name</label>
@@ -36,12 +37,12 @@ function BookingForm() {
 
             <label className="text-input-label" htmlFor="hour">Choose Time</label>
             <select className="select-input" id="hour" name="hour" value={hour} onChange={e => setHour(e.target.value)}>
-                {availableTimes.map(time => <option value={time} id={time} key={time}>{time}</option>)}
+                {availableTimes.map(time => <option value={time} id={time}>{time}</option>)}
             </select>
 
             <label className="text-input-label" htmlFor="guests">Guests</label>
             <select className="select-input" id="guests" name="guests" value={guests} onChange={e => setGuests(e.target.value)}>
-                {numberOfGuests.map(number => <option value={number} id={number} key={number}>{number}</option>)}
+                {numberOfGuests.map(number => <option value={number} id={number}>{number}</option>)}
             </select>
 
             <label className="text-input-label" htmlFor="occasion">Occasion</label>
@@ -52,8 +53,6 @@ function BookingForm() {
             </select>
 
             <button type="submit" className="submite-button">Reserve a table</button>
-
-
         </form>
     )
 }
