@@ -1,9 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+
+import './style/index.css';
+import './style/cards.css';
+import './style/header.css';
+import './style/herosection.css';
+import './style/main.css';
+import './style/testimonials.css';
+import './style/infosection.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -1,0 +1,31 @@
+.main-container {
+    margin: 90px auto;
+    width: 700px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.main-header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding-right: 10px;
+}
+
+.main-header-title {
+    font-size: 3rem;
+    font-weight: 200;
+}
+
+.main-header-button {
+    font-family: 'Karla', sans-serif;
+    font-weight: bold;
+    margin-top: 15px;
+    border: 0;
+    background-color: #F4CE13;
+    padding: 10px 30px;
+    border-radius: 10px;
+}
