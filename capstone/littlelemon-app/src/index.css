@@ -245,3 +245,59 @@ width: 20px;
   padding: 10px 30px;
   border-radius: 10px;
 }
+
+/* Testimonials */ /* Testimonials */ /* Testimonials */ /* Testimonials */ /* Testimonials */ /* Testimonials */ /* Testimonials */ /* Testimonials */ /* Testimonials */ /* Testimonials */
+/* Testimonials */ /* Testimonials */ /* Testimonials */ /* Testimonials */ /* Testimonials */ /* Testimonials */ /* Testimonials */ /* Testimonials */ /* Testimonials */ /* Testimonials */
+
+.testimonials-section {
+  background-color: #495E57;
+}
+
+.testimonials-section-heading {
+  margin: 0 auto 0;
+  text-align: center;
+  font-size: 3rem;
+  color: white;
+}
+
+.testimonials-cards-container {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 0 0 30px;
+}
+
+.testimonial-card {
+  align-items: center;
+  text-align: center;
+  width: 500px;
+  color: white;
+}
+
+.testimonial-card-img {
+  position: relative;
+  top: 50px;
+  width: 90px;
+  margin: 0;
+}
+
+.testimonial-card-text-container {
+  margin: 0;
+  text-align:justify;
+  text-justify: distribute;
+  background-color: #394b45;
+  padding: 40px 20px 20px;
+  border-radius: 20px;
+}
+
+.testimonial-card-name {
+  font-family: 'Karla', sans-serif;
+  text-align:center;
+}
+
+.testimonial-card-review {
+  font-family: 'Karla', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.3rem;
+}
