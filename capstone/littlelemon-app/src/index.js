@@ -11,6 +11,7 @@ import './style/herosection.css';
 import './style/main.css';
 import './style/testimonials.css';
 import './style/infosection.css'
+import './style/footer.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

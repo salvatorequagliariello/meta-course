@@ -1,5 +1,5 @@
-import localePic from '../images/restaurant.jpg';
-import chefs from '../images/Mario and Adrian A.jpg';
+import chefsA from '../images/Mario and Adrian A.jpg';
+import chefsB from '../images/Mario and Adrian b.jpg';
 
 function InfoSection() {
     return(
@@ -13,8 +13,8 @@ function InfoSection() {
             </div>
 
             <div className="infosection-images">
-                <img className="infosection-images-img one" src={localePic}/>
-                <img className="infosection-images-img two" src={chefs}/>
+                <img className="infosection-images-img one" src={chefsB}/>
+                <img className="infosection-images-img two" src={chefsA}/>
             </div>
         </div>
     )
