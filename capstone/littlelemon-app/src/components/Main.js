@@ -26,11 +26,17 @@ const cards = [
 
 function Main() {
     return(
-        <div className>
-            {cards.map(card => {
-                return(
-                    <Card image={card.img} title={card.title} price={card.price} description={card.description} />)
-                })}
+        <div className="main-container">
+            <div className="main-header-section">
+                <h1 className="main-header-title">This weeks specials!</h1>
+                <button className="main-header-button">Online Menu</button>
+            </div>
+            <div className="cards-container">
+                {cards.map(card => {
+                    return(
+                        <Card image={card.img} title={card.title} price={card.price} description={card.description} />)
+                    })}
+            </div>
         </div>
     );
 };
