@@ -3,16 +3,31 @@ import Header from "./components/Header";
 import Homepage from "./components/Homepage";
 import Footer from "./components/Footer";
 import BookingPage from "./components/BookingPage";
+import { useState, useReducer, useEffect } from "react";
+import { fetchAPI, submitAPI } from "./components/fetchdate";
+
+
+
 
 function App() {
-  const [availableTimes, setAvailableTimes] = useState(["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]);
+  const updateTimes = (state, action) => {
+    if (action.type == "submit-date") {
+
+      return fetchAPI(action.date);
+    }
+  }
+
+  const availableTimes = fetchAPI(new Date());
+
+  const [state, dispatch] = useReducer(updateTimes, availableTimes);
+
 
   return (
     <>
       <Header />
       <Routes>
         <Route index element={<Homepage />} />
-        <Route path="/booking" element={<BookingPage />} />
+        <Route path="/booking" element={<BookingPage availableTimes={state} dispatch={dispatch} />} />
       </Routes>
       <Footer />
     </>
