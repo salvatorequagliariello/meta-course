@@ -5,7 +5,6 @@ const numberOfGuests = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // const availableTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
 
 function BookingForm({availableTimes, dispatch}) {
-
     const [formData, setFormData] = useState({});
     const [firstName, seFirsttName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -35,11 +34,18 @@ function BookingForm({availableTimes, dispatch}) {
             <input className="text-input" type="email" placeholder="Email" name="email" id="email" value={email} onChange={e => setEmail(e.target.value)} />
 
             <label className="text-input-label" htmlFor="date">Choose date</label>
-            <input className="date-input" type="date" name="date" id="date" value={date} onChange={e => setDate(e.target.value)} />
+            <input className="date-input" type="date" name="date" id="date" value={date}
+                   onChange={e => {
+                                    setDate(e.target.value);
+                                    dispatch({
+                                        type: 'submit-date',
+                                        date: new Date(e.target.value),
+                                      });
+                                    }} />
 
             <label className="text-input-label" htmlFor="hour">Choose Time</label>
             <select className="select-input" id="hour" name="hour" value={hour} onChange={e => setHour(e.target.value)}>
-                {availableTimes().map(time => <option value={time} id={time}>{time}</option>)}
+                {availableTimes.map(time => <option value={time} id={time}>{time}</option>)}
             </select>
 
             <label className="text-input-label" htmlFor="guests">Guests</label>

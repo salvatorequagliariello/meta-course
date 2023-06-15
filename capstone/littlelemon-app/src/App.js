@@ -11,16 +11,15 @@ import { fetchAPI, submitAPI } from "./components/fetchdate";
 
 function App() {
   const updateTimes = (state, action) => {
-    
+    if (action.type == "submit-date") {
+
+      return fetchAPI(action.date);
+    }
   }
 
-  const initializeTimes = (day = new Date()) => {
-    const availableTimes = fetchAPI(day);
+  const availableTimes = fetchAPI(new Date());
 
-    return availableTimes;
-  }
-
-  const [state, dispatch] = useReducer(updateTimes, initializeTimes);
+  const [state, dispatch] = useReducer(updateTimes, availableTimes);
 
 
   return (
