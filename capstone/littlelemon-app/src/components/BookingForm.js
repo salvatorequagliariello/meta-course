@@ -2,8 +2,9 @@
 import { useReducer, useState } from "react";
 
 const numberOfGuests = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const availableTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
 
-function BookingForm() {
+function BookingForm({availableTimes, dispatch}) {
 
     const [formData, setFormData] = useState({});
     const [firstName, seFirsttName] = useState("");
@@ -19,6 +20,7 @@ function BookingForm() {
     };
 
     return(
+
         <form onSubmit={handleSubmit}>
 
             <fieldset className="field-set">
@@ -37,7 +39,7 @@ function BookingForm() {
 
             <label className="text-input-label" htmlFor="hour">Choose Time</label>
             <select className="select-input" id="hour" name="hour" value={hour} onChange={e => setHour(e.target.value)}>
-                {availableTimes.map(time => <option value={time} id={time}>{time}</option>)}
+                {availableTimes().map(time => <option value={time} id={time}>{time}</option>)}
             </select>
 
             <label className="text-input-label" htmlFor="guests">Guests</label>
