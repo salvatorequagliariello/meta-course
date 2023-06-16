@@ -21,47 +21,58 @@ function BookingForm({availableTimes, dispatch, submitForm}) {
 
     return(
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form-container">
+                <h1 className="form-h1">Booking form</h1>
+                <div className="field-set">
+                    <label className="text-input-label" htmlFor="firstName">First name</label>
+                    <input className="text-input" type="text" placeholder="First Name" name="firstName" id="firstName" value={formData.firstName} onChange={e => onChange(e)} />
+                </div>
 
-            <fieldset className="field-set">
-                <label className="text-input-label" htmlFor="firstName">First name</label>
-                <input className="text-input" type="text" placeholder="First Name" name="firstName" id="firstName" value={formData.firstName} onChange={e => onChange(e)} />
+                <div className="field-set">
+                    <label className="text-input-label" htmlFor="lastName">Last name</label>
+                    <input className="text-input" type="text" placeholder="Last Name" name="lastName" id="lastName" value={formData.lastName} onChange={e => onChange(e)} />
+                </div>
 
-                <label className="text-input-label" htmlFor="lastName">Last name</label>
-                <input className="text-input" type="text" placeholder="Last Name" name="lastName" id="lastName" value={formData.lastName} onChange={e => onChange(e)} />
-            </fieldset>
+            <div className="field-set">
+                <label className="text-input-label" htmlFor="email">Email</label>
+                <input className="text-input" type="email" placeholder="Email" name="email" id="email" value={formData.email} onChange={e => onChange(e)} />
+            </div>
 
-            <label className="text-input-label" htmlFor="email">Email</label>
-            <input className="text-input" type="email" placeholder="Email" name="email" id="email" value={formData.email} onChange={e => onChange(e)} />
-
-            <label className="text-input-label" htmlFor="date">Choose date</label>
-            <input className="date-input" type="date" name="date" id="date" value={formData.date}
+            <div className="field-set">
+                <label className="text-input-label" htmlFor="date">Choose date</label>
+                <input className="date-input" type="date" name="date" id="date" value={formData.date}
                    onChange={e => {
-                                    onChange(e);
-                                    dispatch({
-                                        type: 'submit-date',
-                                        date: new Date(e.target.value),
-                                      });
-                                    }} />
+                       onChange(e);
+                       dispatch({
+                           type: 'submit-date',
+                           date: new Date(e.target.value),
+                        });
+                    }} />
+            </div>
+            
+            <div className="field-set">
+                <label className="text-input-label" htmlFor="hour">Choose Time</label>
+                <select className="select-input" id="hour" name="hour" value={formData.hour} onChange={e => onChange(e)}>
+                    {availableTimes.map(time => <option value={time} id={time} key={time}>{time}</option>)}
+                </select>
+            </div>
+                <div className="field-set">
+                <label className="text-input-label" htmlFor="guests">Guests</label>
+                <select className="select-input" id="guests" name="guests" value={formData.guests} onChange={e => onChange(e)}>
+                    {numberOfGuests.map(number => <option value={number} id={number} key={number}>{number}</option>)}
+                </select>
+            </div>
+            
+            <div className="field-set">
+                <label className="text-input-label" htmlFor="occasion">Occasion</label>
+                <select className="select-input" id="occasion" name="occasion" value={formData.occasion} onChange={e => onChange(e)}>
+                    <option value="" id="choose">-- Choose --</option>
+                    <option value="birthday" id="birthday">Birthday</option>
+                    <option value="anniversary" id="anniversary">Anniversary</option>
+                </select>
+            </div>
 
-            <label className="text-input-label" htmlFor="hour">Choose Time</label>
-            <select className="select-input" id="hour" name="hour" value={formData.hour} onChange={e => onChange(e)}>
-                {availableTimes.map(time => <option value={time} id={time} key={time}>{time}</option>)}
-            </select>
-
-            <label className="text-input-label" htmlFor="guests">Guests</label>
-            <select className="select-input" id="guests" name="guests" value={formData.guests} onChange={e => onChange(e)}>
-                {numberOfGuests.map(number => <option value={number} id={number} key={number}>{number}</option>)}
-            </select>
-
-            <label className="text-input-label" htmlFor="occasion">Occasion</label>
-            <select className="select-input" id="occasion" name="occasion" value={formData.occasion} onChange={e => onChange(e)}>
-                <option value="" id="choose">-- Choose --</option>
-                <option value="birthday" id="birthday">Birthday</option>
-                <option value="anniversary" id="anniversary">Anniversary</option>
-            </select>
-
-            <button type="submit" className="submite-button">Reserve a table</button>
+            <button type="submit" className="submit-button">Reserve a table</button>
         </form>
     )
 }
