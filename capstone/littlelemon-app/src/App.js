@@ -11,12 +11,9 @@ import ConfirmedBooking from "./components/ConfirmedBooking";
 const availableTimes = fetchAPI(new Date());
 const updateTimes = (state, action) => {
   if (action.type == "submit-date") {
-
     return fetchAPI(action.date);
-  }
-}
-
-
+  };
+};
 
 function App() {
   const [state, dispatch] = useReducer(updateTimes, availableTimes);

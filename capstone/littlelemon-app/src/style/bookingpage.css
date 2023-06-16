@@ -28,6 +28,7 @@
 
 .field-set {
     display: flex;
+    position: relative;
     flex-direction: column;
     font-family: 'Karla', sans-serif;
 }
@@ -103,3 +104,18 @@
     background-color: #756514;
     color: white;
 }
+
+.error-message {
+    position: absolute;
+    bottom: -19px;
+    font-family: 'Karla', sans-serif;
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: rgb(239, 76, 76);
+    z-index: 40;
+  }
+
+  .sup-point {
+    color: rgb(239, 76, 76);
+    font-size: 1rem;
+  }
