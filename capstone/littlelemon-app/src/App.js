@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import BookingPage from "./components/BookingPage";
 import { useState, useReducer, useEffect } from "react";
 import { fetchAPI, submitAPI } from "./components/fetchdate";
+import ConfirmedBooking from "./components/ConfirmedBooking";
 
 
 const availableTimes = fetchAPI(new Date());
@@ -22,7 +23,9 @@ function App() {
   const navigate = useNavigate();
 
   const submitForm = (formData) => {
-    
+    if(submitAPI(formData)) {
+      navigate("/confirmedbooking")
+    }
   }
   
   return (
@@ -30,7 +33,8 @@ function App() {
       <Header />
       <Routes>
         <Route index element={<Homepage />} />
-        <Route path="/booking" element={<BookingPage availableTimes={state} dispatch={dispatch} />} />
+        <Route path="/booking" element={<BookingPage availableTimes={state} dispatch={dispatch} submitForm={submitForm} />} />
+        <Route path="/confirmedbooking" element={<ConfirmedBooking />} />
       </Routes>
       <Footer />
     </>

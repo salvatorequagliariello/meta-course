@@ -4,7 +4,7 @@ import { useReducer, useState } from "react";
 const numberOfGuests = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // const availableTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
 
-function BookingForm({availableTimes, dispatch}) {
+function BookingForm({availableTimes, dispatch, submitForm}) {
     const [formData, setFormData] = useState({});
 
     const onChange = (e) => {
@@ -16,6 +16,7 @@ function BookingForm({availableTimes, dispatch}) {
 
     const handleSubmit = e => {
         e.preventDefault()
+        submitForm(formData);
     };
 
     return(
