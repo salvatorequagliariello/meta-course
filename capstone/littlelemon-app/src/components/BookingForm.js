@@ -6,13 +6,13 @@ const numberOfGuests = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 function BookingForm({availableTimes, dispatch}) {
     const [formData, setFormData] = useState({});
-    const [firstName, seFirsttName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
-    const [date, setDate] = useState("");
-    const [hour, setHour] = useState("");
-    const [guests, setGuests] = useState("");
-    const [occasion, setOccasion] = useState("");
+
+    const onChange = (e) => {
+        setFormData({
+                    ...formData,
+                    [e.target.name]: e.target.value,
+                    }
+        )};
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -24,19 +24,19 @@ function BookingForm({availableTimes, dispatch}) {
 
             <fieldset className="field-set">
                 <label className="text-input-label" htmlFor="firstName">First name</label>
-                <input className="text-input" type="text" placeholder="First Name" name="firstName" id="firstName" value={firstName} onChange={e => seFirsttName(e.target.value)} />
+                <input className="text-input" type="text" placeholder="First Name" name="firstName" id="firstName" value={formData.firstName} onChange={e => onChange(e)} />
 
                 <label className="text-input-label" htmlFor="lastName">Last name</label>
-                <input className="text-input" type="text" placeholder="Last Name" name="lastName" id="lastName" value={lastName} onChange={e => setLastName(e.target.value)} />
+                <input className="text-input" type="text" placeholder="Last Name" name="lastName" id="lastName" value={formData.lastName} onChange={e => onChange(e)} />
             </fieldset>
 
             <label className="text-input-label" htmlFor="email">Email</label>
-            <input className="text-input" type="email" placeholder="Email" name="email" id="email" value={email} onChange={e => setEmail(e.target.value)} />
+            <input className="text-input" type="email" placeholder="Email" name="email" id="email" value={formData.email} onChange={e => onChange(e)} />
 
             <label className="text-input-label" htmlFor="date">Choose date</label>
-            <input className="date-input" type="date" name="date" id="date" value={date}
+            <input className="date-input" type="date" name="date" id="date" value={formData.date}
                    onChange={e => {
-                                    setDate(e.target.value);
+                                    onChange(e);
                                     dispatch({
                                         type: 'submit-date',
                                         date: new Date(e.target.value),
@@ -44,17 +44,17 @@ function BookingForm({availableTimes, dispatch}) {
                                     }} />
 
             <label className="text-input-label" htmlFor="hour">Choose Time</label>
-            <select className="select-input" id="hour" name="hour" value={hour} onChange={e => setHour(e.target.value)}>
-                {availableTimes.map(time => <option value={time} id={time}>{time}</option>)}
+            <select className="select-input" id="hour" name="hour" value={formData.hour} onChange={e => onChange(e)}>
+                {availableTimes.map(time => <option value={time} id={time} key={time}>{time}</option>)}
             </select>
 
             <label className="text-input-label" htmlFor="guests">Guests</label>
-            <select className="select-input" id="guests" name="guests" value={guests} onChange={e => setGuests(e.target.value)}>
-                {numberOfGuests.map(number => <option value={number} id={number}>{number}</option>)}
+            <select className="select-input" id="guests" name="guests" value={formData.guests} onChange={e => onChange(e)}>
+                {numberOfGuests.map(number => <option value={number} id={number} key={number}>{number}</option>)}
             </select>
 
             <label className="text-input-label" htmlFor="occasion">Occasion</label>
-            <select className="select-input" id="occasion" name="occasion" value={occasion} onChange={e => setOccasion(e.target.value)}>
+            <select className="select-input" id="occasion" name="occasion" value={formData.occasion} onChange={e => onChange(e)}>
                 <option value="" id="choose">-- Choose --</option>
                 <option value="birthday" id="birthday">Birthday</option>
                 <option value="anniversary" id="anniversary">Anniversary</option>

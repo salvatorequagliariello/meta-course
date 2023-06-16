@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Header from "./components/Header";
 import Homepage from "./components/Homepage";
 import Footer from "./components/Footer";
@@ -7,21 +7,24 @@ import { useState, useReducer, useEffect } from "react";
 import { fetchAPI, submitAPI } from "./components/fetchdate";
 
 
+const availableTimes = fetchAPI(new Date());
+const updateTimes = (state, action) => {
+  if (action.type == "submit-date") {
+
+    return fetchAPI(action.date);
+  }
+}
+
 
 
 function App() {
-  const updateTimes = (state, action) => {
-    if (action.type == "submit-date") {
-
-      return fetchAPI(action.date);
-    }
-  }
-
-  const availableTimes = fetchAPI(new Date());
-
   const [state, dispatch] = useReducer(updateTimes, availableTimes);
+  const navigate = useNavigate();
 
-
+  const submitForm = (formData) => {
+    
+  }
+  
   return (
     <>
       <Header />
