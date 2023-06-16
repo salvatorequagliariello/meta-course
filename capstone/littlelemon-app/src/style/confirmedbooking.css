@@ -1,0 +1,65 @@
+
+.confirmed-container {
+    background-image: url("../images/152200-OU5A7V-81.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    padding: 100px 0;
+}
+
+.banner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #495E57;
+    padding: 15px 150px 20px;
+    border-radius: 25px;
+    gap: 10px;
+}
+
+.banner-name {
+    margin-bottom: 20px;
+    font-family: 'Karla', sans-serif;
+    color: white;
+}
+
+.banner-image {
+    width: 150px;
+    border-radius: 300px;
+}
+
+.banner-title {
+    color: #F4CE13;
+    margin: 0;
+}
+
+.banner-p {
+    margin: 0;
+    color: white;
+    font-family: 'Karla', sans-serif;
+}
+
+.banner-button {
+    margin: 30px auto 0;
+    font-family: 'Karla', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    background-color: #F4CE13;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 50px;
+}
+
+.banner-button:hover {
+    background-color: #B99F16;
+    cursor: pointer;
+  }
+
+.banner-button:active {
+    background-color: #756514;
+    color: white;
+}
