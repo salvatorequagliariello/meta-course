@@ -29,3 +29,13 @@
     padding: 10px 30px;
     border-radius: 10px;
 }
+
+.main-header-button:hover {
+    background-color: #B99F16;
+    cursor: pointer;
+}
+
+.main-header-button:active {
+    background-color: #756514;
+    color: white;
+}

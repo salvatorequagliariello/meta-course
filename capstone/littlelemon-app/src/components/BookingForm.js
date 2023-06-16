@@ -2,65 +2,100 @@
 import { useReducer, useState } from "react";
 
 const numberOfGuests = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-// const availableTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
 
-function BookingForm({availableTimes, dispatch}) {
+const validateObject = {
+    firstName: false,
+    lastName: false,
+    email: false,
+    date: false,
+    hour: false,
+};
+
+function BookingForm({availableTimes, dispatch, submitForm}) {
     const [formData, setFormData] = useState({});
-    const [firstName, seFirsttName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
-    const [date, setDate] = useState("");
-    const [hour, setHour] = useState("");
-    const [guests, setGuests] = useState("");
-    const [occasion, setOccasion] = useState("");
+    const [validate, setValidate] = useState(validateObject);
+
+    const onChange = (e) => {
+        setFormData({
+                    ...formData,
+                    [e.target.name]: e.target.value,
+                    }
+        )};
+
 
     const handleSubmit = e => {
         e.preventDefault()
+        submitForm(formData);
     };
 
-    return(
+    const handleBlur = e => {
+        e.preventDefault();
+        setValidate({
+            ...validate,
+            [e.target.name]: true
+        })
+    }
 
-        <form onSubmit={handleSubmit}>
 
-            <fieldset className="field-set">
-                <label className="text-input-label" htmlFor="firstName">First name</label>
-                <input className="text-input" type="text" placeholder="First Name" name="firstName" id="firstName" value={firstName} onChange={e => seFirsttName(e.target.value)} />
+    return (
+        <form onSubmit={handleSubmit} className="form-container">
+                <h1 className="form-h1">Booking form</h1>
+                <div className="field-set">
+                    <label className="text-input-label" htmlFor="firstName">First name<sup className="sup-point"> *</sup></label>
+                    <input className="text-input" required type="text" placeholder="First Name" name="firstName" onBlur={(e) => handleBlur(e)} id="firstName" value={formData.firstName} onChange={e => onChange(e)}/>
+                    {validate.firstName && (formData.firstName === "" || formData.firstName === undefined) && <p className="error-message">First name is required!</p>}
+                </div>
 
-                <label className="text-input-label" htmlFor="lastName">Last name</label>
-                <input className="text-input" type="text" placeholder="Last Name" name="lastName" id="lastName" value={lastName} onChange={e => setLastName(e.target.value)} />
-            </fieldset>
+                <div className="field-set">
+                    <label className="text-input-label" htmlFor="lastName">Last name<sup className="sup-point"> *</sup></label>
+                    <input className="text-input" type="text" placeholder="Last Name" name="lastName" id="lastName" value={formData.lastName} onChange={e => onChange(e)} onBlur={(e) => handleBlur(e)} required/>
+                    {validate.lastName && (formData.lastName === "" || formData.lastName === undefined) && <p className="error-message">Last name is required!</p>}
+                </div>
 
-            <label className="text-input-label" htmlFor="email">Email</label>
-            <input className="text-input" type="email" placeholder="Email" name="email" id="email" value={email} onChange={e => setEmail(e.target.value)} />
+            <div className="field-set">
+                <label className="text-input-label" htmlFor="email">Email<sup className="sup-point"> *</sup></label>
+                <input className="text-input" type="email" placeholder="Email" name="email" id="email" value={formData.email} onChange={e => onChange(e)} onBlur={(e) => handleBlur(e)} required/>
+                {validate.email && (formData.email === "" || formData.email === undefined) && <p className="error-message">Email is required!</p>}
+            </div>
 
-            <label className="text-input-label" htmlFor="date">Choose date</label>
-            <input className="date-input" type="date" name="date" id="date" value={date}
+            <div className="field-set">
+                <label className="text-input-label" htmlFor="date">Choose date<sup className="sup-point"> *</sup></label>
+                <input className="date-input" required type="date" name="date" id="date" value={formData.date} onBlur={(e) => handleBlur(e)}
                    onChange={e => {
-                                    setDate(e.target.value);
-                                    dispatch({
-                                        type: 'submit-date',
-                                        date: new Date(e.target.value),
-                                      });
-                                    }} />
+                       onChange(e);
+                       dispatch({
+                           type: 'submit-date',
+                           date: new Date(e.target.value),
+                        });
+                    }} />
+                {validate.date && (formData.date === "" || formData.date === undefined) && <p className="error-message">Date is required!</p>}
+            </div>
+            
+            <div className="field-set">
+                <label className="text-input-label" htmlFor="hour">Choose Time<sup className="sup-point"> *</sup></label>
+                <select className="select-input" id="hour" name="hour" value={formData.hour} onBlur={(e) => handleBlur(e)} onChange={e => onChange(e)} required>
+                    <option value="">-- Choose Time --</option>
+                    {availableTimes.map(time => <option value={time} id={time} key={time}>{time}</option>)}
+                </select>
+                {validate.hour && (formData.hour === "" || formData.hour === undefined) && <p className="error-message">Time is required!</p>}
+            </div>
+                <div className="field-set">
+                <label className="text-input-label" htmlFor="guests">Guests<sup className="sup-point"> *</sup></label>
+                <select className="select-input" id="guests" name="guests" value={formData.guests} onChange={e => onChange(e)} required>
+                    {numberOfGuests.map(number => <option value={number} id={number} key={number}>{number}</option>)}
+                </select>
+            </div>
+            
+            <div className="field-set">
+                <label className="text-input-label" htmlFor="occasion">Occasion</label>
+                <select className="select-input" id="occasion" name="occasion" value={formData.occasion} onChange={e => onChange(e)}>
+                    <option value="" id="choose">-- Choose --</option>
+                    <option value="birthday" id="birthday">Birthday</option>
+                    <option value="anniversary" id="anniversary">Anniversary</option>
+                </select>
+            </div>
 
-            <label className="text-input-label" htmlFor="hour">Choose Time</label>
-            <select className="select-input" id="hour" name="hour" value={hour} onChange={e => setHour(e.target.value)}>
-                {availableTimes.map(time => <option value={time} id={time}>{time}</option>)}
-            </select>
-
-            <label className="text-input-label" htmlFor="guests">Guests</label>
-            <select className="select-input" id="guests" name="guests" value={guests} onChange={e => setGuests(e.target.value)}>
-                {numberOfGuests.map(number => <option value={number} id={number}>{number}</option>)}
-            </select>
-
-            <label className="text-input-label" htmlFor="occasion">Occasion</label>
-            <select className="select-input" id="occasion" name="occasion" value={occasion} onChange={e => setOccasion(e.target.value)}>
-                <option value="" id="choose">-- Choose --</option>
-                <option value="birthday" id="birthday">Birthday</option>
-                <option value="anniversary" id="anniversary">Anniversary</option>
-            </select>
-
-            <button type="submit" className="submite-button">Reserve a table</button>
+            <button type="submit" className="submit-button">Reserve a table</button>
         </form>
     )
 }

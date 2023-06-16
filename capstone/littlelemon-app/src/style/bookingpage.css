@@ -1,0 +1,121 @@
+.booking-page-container {
+    background-image: url("../images/152200-OU5A7V-81.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px 0 120px;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+}
+
+.form-h1 {
+    color: #F4CE13;
+    font-weight: 200;
+    font-size: 3rem;
+}
+
+.form-container {
+    background-color: #495E57;
+    border-radius: 20px;
+    margin: 0 auto;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px 30px 15px;
+    gap: 15px;
+    font-family: 'Karla', sans-serif;
+}
+
+.field-set {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    font-family: 'Karla', sans-serif;
+}
+
+.text-input-label {
+    color: white;
+    font-family: 'Karla', sans-serif;
+}
+
+.text-input {
+    border: none;
+    border-radius: 6px;
+    padding: 6px 15px;
+    font-family: 'Karla', sans-serif;
+}
+
+.text-input:focus {
+    outline: solid 2px #F4CE13;
+    outline-offset: 0;
+}
+
+.date-input {
+    font-family: 'Karla', sans-serif;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 15px;
+}
+
+.date-input:focus {
+    outline: solid 2px #F4CE13;
+    outline-offset: 0;
+}
+
+.select-input {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    background-color: #fafafa;
+    height: 37px;
+    width: 100%;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAMAAACtdX32AAAAdVBMVEUAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhMdQaAAAAJ3RSTlMAAAECAwQGBwsOFBwkJTg5RUZ4eYCHkJefpaytrsXGy8zW3+Do8vNn0bsyAAAAYElEQVR42tXROwJDQAAA0Ymw1p9kiT+L5P5HVEi3qJn2lcPjtIuzUIJ/rhIGy762N3XaThqMN1ZPALsZPEzG1x8LrFL77DHBnEMxBewz0fJ6LyFHTPL7xhwzWYrJ9z22AqmQBV757MHfAAAAAElFTkSuQmCC);
+    background-position: 99%;
+    background-repeat: no-repeat;
+
+    font-family: 'Karla', sans-serif;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 15px;
+}
+
+.select-input:focus {
+    outline: solid 2px #F4CE13;
+    outline-offset: 0;
+}
+
+.submit-button {
+    margin: 30px auto 0;
+    font-family: 'Karla', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+    background-color: #F4CE13;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 50px;
+}
+
+.submit-button:hover {
+    background-color: #B99F16;
+    cursor: pointer;
+  }
+
+.submit-button:active {
+    background-color: #756514;
+    color: white;
+}
+
+.error-message {
+    position: absolute;
+    bottom: -19px;
+    font-family: 'Karla', sans-serif;
+    font-weight: bold;
+    font-size: 0.8rem;
+    color: rgb(239, 76, 76);
+    z-index: 40;
+  }
+
+  .sup-point {
+    color: rgb(239, 76, 76);
+    font-size: 1rem;
+  }

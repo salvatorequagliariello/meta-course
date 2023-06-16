@@ -13,9 +13,13 @@
     gap: 20px;
 }
 
+.header-img:hover {
+    cursor: pointer;
+}
+
 .nav-link {
     text-decoration: none;
     color: black;
     font-family: 'Karla', sans-serif;
     font-weight: bold;
-  }
+}

@@ -56,3 +56,20 @@
     padding: 10px 30px;
     border-radius: 15px;
   }
+
+  .hero-text-button:hover {
+    background-color: #B99F16;
+    cursor: pointer;
+  }
+
+  .hero-text-button:active {
+    background-color: #756514;
+    color: white;
+  }
+
+  .hero-link-button {
+    font-family: 'Karla', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+  }
